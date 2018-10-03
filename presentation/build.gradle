@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    defaultConfig {
+        applicationId "com.example.evgen.fanipolparking"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    def dependency = rootProject.ext.dependencies
+
+    implementation dependency.supportAppCompat
+    implementation dependency.supportV4
+    implementation dependency.supportDesign
+
+    implementation dependency.constraintLayout
+
+    annotationProcessor dependency.androidBindingCompiler
+
+    implementation dependency.dagger
+    annotationProcessor dependency.daggerCompiler
+
+    implementation dependency.retrofitConverterGson
+    implementation dependency.retrofitRxAdapter
+
+    implementation dependency.rxAndroid
+
+    implementation dependency.archComponentsExtention
+    annotationProcessor dependency.archComponentsCompiler
+
+    api project(path: ':data')
+}

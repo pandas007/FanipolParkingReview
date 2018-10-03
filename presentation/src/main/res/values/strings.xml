@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fanipol Parking</string>
+
+    <!--Driver fragment-->
+    <string name="car_number">Введите гос. номер авто</string>
+    <string name="car_number_edit1">7777</string>
+    <string name="car_number_edit2">АВ</string>
+    <string name="car_number_edit3">5</string>
+    <string name="driver_check_button">Проверить</string>
+    <string name="warning_match_car">Такого авто нет на стоянке</string>
+    <string name="warning_no_internet">Отсутствует интернет</string>
+
+    <!--Admin fragment-->
+    <string name="password_edit">Пароль</string>
+    <string name="admin_enter_button">Вход</string>
+    <string name="warning_wrong_password">Неверный пароль</string>
+
+    <!--Driver info screen-->
+    <string name="car_model">Марка:</string>
+    <string name="car_color">Цвет:</string>
+
+</resources>

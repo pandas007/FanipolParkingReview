@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/carNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/car_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <EditText
+        android:id="@+id/carNumberEdit1"
+        style="@style/CarNumberEditStyle"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/car_number_edit1"
+        android:inputType="number"
+        android:maxLength="4"
+        app:layout_constraintEnd_toStartOf="@+id/carNumberEdit2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_weight="3"
+        app:layout_constraintStart_toStartOf="@+id/carNumberTextView"
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+
+    <EditText
+        android:id="@+id/carNumberEdit2"
+        style="@style/CarNumberEditStyle"
+        android:layout_marginTop="8dp"
+        android:hint="@string/car_number_edit2"
+        android:inputType="text|textCapCharacters"
+        android:maxLength="2"
+        app:layout_constraintEnd_toStartOf="@+id/carNumberEdit3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/carNumberEdit1"
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+
+    <EditText
+        android:id="@+id/carNumberEdit3"
+        style="@style/CarNumberEditStyle"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/car_number_edit3"
+        android:inputType="number"
+        android:maxLength="1"
+        app:layout_constraintEnd_toEndOf="@+id/carNumberTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/carNumberEdit2"
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+
+    <Button
+        android:id="@+id/driverCheckButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/driver_check_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carNumberEdit2" />
+
+    <TextView
+        android:id="@+id/warningMatchCar"
+        style="@style/WarningTextView"
+        android:layout_marginTop="8dp"
+        android:text="@string/warning_match_car"
+        app:layout_constraintEnd_toEndOf="@+id/driverCheckButton"
+        app:layout_constraintStart_toStartOf="@+id/driverCheckButton"
+        app:layout_constraintTop_toBottomOf="@+id/driverCheckButton" />
+
+    <TextView
+        android:id="@+id/warningNoInternetDriver"
+        style="@style/WarningTextView"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/warning_no_internet"
+        app:layout_constraintEnd_toEndOf="@+id/driverCheckButton"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/driverCheckButton"
+        app:layout_constraintTop_toBottomOf="@+id/warningMatchCar" />
+
+</android.support.constraint.ConstraintLayout>
