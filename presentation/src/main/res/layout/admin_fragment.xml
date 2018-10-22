@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.example.evgen.fanipolparking.presentation.screens.AdminViewModel"/>
+    </data>
+
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -46,7 +55,8 @@
         android:text="@string/warning_no_internet"
         app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
         app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
-        app:layout_constraintTop_toBottomOf="@+id/warningWrongPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/warningWrongPassword"
+        android:visibility="@{viewmodel.isOnline ? View.INVISIBLE : View.VISIBLE}"/>
 
     <TextView
         android:id="@+id/warningWrongPassword"
@@ -59,3 +69,5 @@
         app:layout_constraintTop_toBottomOf="@+id/adminEnterButton" />
 
 </android.support.constraint.ConstraintLayout>
+
+</layout>

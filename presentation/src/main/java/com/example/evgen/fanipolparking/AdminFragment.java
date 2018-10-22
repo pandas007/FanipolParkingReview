@@ -1,57 +1,48 @@
 package com.example.evgen.fanipolparking;
 
+import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+
+import com.example.evgen.fanipolparking.databinding.AdminFragmentBinding;
+import com.example.evgen.fanipolparking.presentation.base.BaseMvvmFragment;
+import com.example.evgen.fanipolparking.presentation.screens.AdminViewModel;
 
 
-public class AdminFragment extends Fragment {
+public class AdminFragment extends BaseMvvmFragment<AdminFragmentBinding, AdminViewModel> {
 
-    private EditText editText;
-    private Button button;
-    private TextView warningWrongPassword;
-    private TextView warningInternet;
-
-    private NetworkReceiver networkReceiver;
+    NetworkReceiver networkReceiver;
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public int provideLayoutId() {
+        return R.layout.admin_fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = getLayoutInflater().inflate(R.layout.admin_fragment, container, false);
-
-        editText = view.findViewById(R.id.adminPasswordEdit);
-        button = view.findViewById(R.id.adminEnterButton);
-        warningWrongPassword = view.findViewById(R.id.warningWrongPassword);
-        warningInternet = view.findViewById(R.id.warningNoInternetAdmin);
-
-        //initNetworkReceiver();
-
-        return view;
+    public AdminViewModel provideViewModel() {
+        return ViewModelProviders.of(this).get(AdminViewModel.class);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        networkReceiver = new NetworkReceiver(viewModel);
+        initReceiver(networkReceiver, getContext());
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
-        //getContext().unregisterReceiver(networkReceiver);
+        if (networkReceiver != null) {
+            getContext().unregisterReceiver(networkReceiver);
+            networkReceiver = null;
+        }
     }
 
-    private void initNetworkReceiver(){
+    private void initReceiver(NetworkReceiver receiver, Context context){
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
-        networkReceiver = new NetworkReceiver(button, warningInternet);
-        getContext().registerReceiver(networkReceiver, intentFilter);
+        context.registerReceiver(receiver, intentFilter);
     }
 }
