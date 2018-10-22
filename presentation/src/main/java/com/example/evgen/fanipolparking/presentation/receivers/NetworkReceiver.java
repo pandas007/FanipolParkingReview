@@ -11,7 +11,6 @@ import com.example.evgen.fanipolparking.presentation.base.BaseViewModel;
 
 public class NetworkReceiver extends BroadcastReceiver{
 
-    private boolean isNetworkOn = false;
     private BaseViewModel viewModel;
 
     public NetworkReceiver(BaseViewModel viewModel) {
