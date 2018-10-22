@@ -1,14 +1,16 @@
-package com.example.evgen.fanipolparking;
+package com.example.evgen.fanipolparking.presentation.screens;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 
+import com.example.evgen.fanipolparking.R;
 import com.example.evgen.fanipolparking.databinding.DriverFragmentBinding;
 import com.example.evgen.fanipolparking.presentation.base.BaseMvvmFragment;
 
-import com.example.evgen.fanipolparking.presentation.screens.DriverViewModel;
+import com.example.evgen.fanipolparking.presentation.receivers.NetworkReceiver;
+import com.example.evgen.fanipolparking.presentation.screens.viewmodels.DriverViewModel;
 
 public class DriverFragment extends BaseMvvmFragment<DriverFragmentBinding, DriverViewModel>{
 

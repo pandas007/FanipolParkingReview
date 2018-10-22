@@ -7,7 +7,7 @@
         <import type="android.view.View"/>
         <variable
             name="viewmodel"
-            type="com.example.evgen.fanipolparking.presentation.screens.DriverViewModel"/>
+            type="com.example.evgen.fanipolparking.presentation.screens.viewmodels.DriverViewModel"/>
     </data>
 
 <android.support.constraint.ConstraintLayout

@@ -1,4 +1,4 @@
-package com.example.evgen.fanipolparking.presentation.screens;
+package com.example.evgen.fanipolparking.presentation.screens.viewmodels;
 
 import com.example.evgen.fanipolparking.app.App;
 import com.example.evgen.fanipolparking.presentation.base.BaseViewModel;

@@ -1,4 +1,4 @@
-package com.example.evgen.fanipolparking.presentation.screens;
+package com.example.evgen.fanipolparking.presentation.screens.viewmodels;
 
 import com.example.evgen.domain.interactors.FindDriverByNumberUseCase;
 import com.example.evgen.fanipolparking.app.App;

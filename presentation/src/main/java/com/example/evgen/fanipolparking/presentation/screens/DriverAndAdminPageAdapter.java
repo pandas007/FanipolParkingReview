@@ -1,4 +1,4 @@
-package com.example.evgen.fanipolparking;
+package com.example.evgen.fanipolparking.presentation.screens;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
