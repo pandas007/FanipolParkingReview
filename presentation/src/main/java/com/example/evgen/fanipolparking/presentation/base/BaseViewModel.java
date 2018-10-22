@@ -1,11 +1,15 @@
 package com.example.evgen.fanipolparking.presentation.base;
 
 import android.arch.lifecycle.ViewModel;
+import android.databinding.ObservableBoolean;
 
 import io.reactivex.disposables.CompositeDisposable;
 
 
 public abstract class BaseViewModel extends ViewModel {
+
+    //warningNoInternetTextView. Used by NetworkReceiver
+    public final ObservableBoolean isOnline = new ObservableBoolean();
 
     protected CompositeDisposable compositeDisposable = new CompositeDisposable();
 

@@ -22,7 +22,7 @@ public abstract class BaseMvvmActivity <Binding extends ViewDataBinding, ViewMod
         super.onCreate(savedInstanceState);
         viewModel = provideViewModel();
         binding = DataBindingUtil.setContentView(this, provideLayoutId());
-        binding.setVariable(BR.viewModel, viewModel);
+        binding.setVariable(BR.viewmodel, viewModel);
     }
 
     @Override

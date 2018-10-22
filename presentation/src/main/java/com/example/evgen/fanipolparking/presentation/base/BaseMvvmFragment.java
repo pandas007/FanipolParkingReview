@@ -26,7 +26,7 @@ public abstract class BaseMvvmFragment <Binding extends ViewDataBinding, ViewMod
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewModel = provideViewModel();
         binding = DataBindingUtil.inflate(inflater, provideLayoutId(), container, false);
-        binding.setVariable(BR.viewModel, viewModel);
+        binding.setVariable(BR.viewmodel, viewModel);
         return binding.getRoot();
     }
 

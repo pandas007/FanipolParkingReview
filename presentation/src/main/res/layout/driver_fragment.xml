@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.example.evgen.fanipolparking.presentation.screens.DriverViewModel"/>
+    </data>
+
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -98,6 +107,10 @@
         app:layout_constraintEnd_toEndOf="@+id/driverCheckButton"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="@+id/driverCheckButton"
-        app:layout_constraintTop_toBottomOf="@+id/warningMatchCar" />
+        app:layout_constraintTop_toBottomOf="@+id/warningMatchCar"
+        android:visibility="@{viewmodel.isOnline ? View.INVISIBLE : View.VISIBLE}"/>
+
 
 </android.support.constraint.ConstraintLayout>
+
+</layout>

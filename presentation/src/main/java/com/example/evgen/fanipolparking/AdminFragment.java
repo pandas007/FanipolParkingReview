@@ -38,14 +38,14 @@ public class AdminFragment extends Fragment {
         warningWrongPassword = view.findViewById(R.id.warningWrongPassword);
         warningInternet = view.findViewById(R.id.warningNoInternetAdmin);
 
-        initNetworkReceiver();
+        //initNetworkReceiver();
 
         return view;
     }
 
     public void onPause() {
         super.onPause();
-        getContext().unregisterReceiver(networkReceiver);
+        //getContext().unregisterReceiver(networkReceiver);
     }
 
     private void initNetworkReceiver(){
