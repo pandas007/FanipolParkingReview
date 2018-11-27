@@ -47,7 +47,8 @@
         app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintHorizontal_weight="3"
         app:layout_constraintStart_toStartOf="@+id/carNumberTextView"
-        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView"
+        android:text="@={viewmodel.editText1}"/>
 
     <EditText
         android:id="@+id/carNumberEdit2"
@@ -60,7 +61,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="2"
         app:layout_constraintStart_toEndOf="@+id/carNumberEdit1"
-        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView"
+        android:text="@={viewmodel.editText2}"/>
 
     <EditText
         android:id="@+id/carNumberEdit3"
@@ -74,7 +76,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toEndOf="@+id/carNumberEdit2"
-        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/carNumberTextView"
+        android:text="@={viewmodel.editText3}"/>
 
     <Button
         android:id="@+id/driverCheckButton"
@@ -87,7 +90,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carNumberEdit2" />
+        app:layout_constraintTop_toBottomOf="@+id/carNumberEdit2"
+        />
 
     <TextView
         android:id="@+id/warningMatchCar"
@@ -96,7 +100,8 @@
         android:text="@string/warning_match_car"
         app:layout_constraintEnd_toEndOf="@+id/driverCheckButton"
         app:layout_constraintStart_toStartOf="@+id/driverCheckButton"
-        app:layout_constraintTop_toBottomOf="@+id/driverCheckButton" />
+        app:layout_constraintTop_toBottomOf="@+id/driverCheckButton"
+        android:visibility="@{viewmodel.isFindCar ? View.INVISIBLE : View.VISIBLE}"/>
 
     <TextView
         android:id="@+id/warningNoInternetDriver"

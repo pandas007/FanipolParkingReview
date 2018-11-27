@@ -15,8 +15,11 @@
     <string name="admin_enter_button">Вход</string>
     <string name="warning_wrong_password">Неверный пароль</string>
 
-    <!--Driver info screen-->
+    <!--Found Driver dialog-->
     <string name="car_model">Марка:</string>
-    <string name="car_color">Цвет:</string>
+    <string name="car_number_info">Гос.номер:</string>
+    <string name="info">Информация</string>
+    <string name="ok_button">ОК</string>
+
 
 </resources>

@@ -38,7 +38,7 @@ public abstract class BaseViewModel extends ViewModel {
     }
 
     /**
-     * Helps to dont forget about dagger injection App.getAppComponent().inject()
+     * Helps to not forget about dagger injection App.getAppComponent().inject()
      */
     public abstract void createInject();
 }

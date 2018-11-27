@@ -28,6 +28,7 @@ ext{
     rxJava2Version = '2.1.17'
     rxAndroidVersion = '2.1.0'
     archComponentVersion = '1.1.1'
+    butterKnifeVersion = '8.8.1'
 
     dependencies = [
             supportAppCompat: "com.android.support:appcompat-v7:$buildToolsSdkVersion",
@@ -50,7 +51,10 @@ ext{
             rxAndroid: "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion",
 
             archComponentsExtention: "android.arch.lifecycle:extensions:$archComponentVersion",
-            archComponentsCompiler:  "android.arch.lifecycle:compiler:$archComponentVersion"
+            archComponentsCompiler:  "android.arch.lifecycle:compiler:$archComponentVersion",
+
+            butterKnife: "com.jakewharton:butterknife:$butterKnifeVersion",
+            butterKnifeCompiler: "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
     ]
 }

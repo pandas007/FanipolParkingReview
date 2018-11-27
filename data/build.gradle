@@ -9,6 +9,7 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         buildConfigField "String", "BASE_URL", '"https://api.backendless.com/033F172D-120F-E28B-FFB6-B5DBB2B3CF00/0503AE83-8A63-48B2-FF3C-1B97DE34CA00/"'
+        buildConfigField "String", "ADMIN_PASSWORD", '"vkjxkggb"'
     }
 
     buildTypes {

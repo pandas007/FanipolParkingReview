@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 
 import com.example.evgen.fanipolparking.BR;
 
+import butterknife.ButterKnife;
+
 
 public abstract class BaseMvvmFragment <Binding extends ViewDataBinding, ViewModel extends BaseViewModel> extends Fragment {
 
@@ -27,6 +29,7 @@ public abstract class BaseMvvmFragment <Binding extends ViewDataBinding, ViewMod
         viewModel = provideViewModel();
         binding = DataBindingUtil.inflate(inflater, provideLayoutId(), container, false);
         binding.setVariable(BR.viewmodel, viewModel);
+        ButterKnife.bind(this, binding.getRoot());
         return binding.getRoot();
     }
 

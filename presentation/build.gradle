@@ -43,5 +43,8 @@ dependencies {
     implementation dependency.archComponentsExtention
     annotationProcessor dependency.archComponentsCompiler
 
+    implementation dependency.butterKnife
+    annotationProcessor dependency.butterKnifeCompiler
+
     api project(path: ':data')
 }
