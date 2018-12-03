@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.evgen.fanipolparking.BR;
 
+import butterknife.ButterKnife;
+
 
 public abstract class BaseMvvmActivity <Binding extends ViewDataBinding, ViewModel extends BaseViewModel> extends AppCompatActivity{
 
@@ -23,6 +25,8 @@ public abstract class BaseMvvmActivity <Binding extends ViewDataBinding, ViewMod
         viewModel = provideViewModel();
         binding = DataBindingUtil.setContentView(this, provideLayoutId());
         binding.setVariable(BR.viewmodel, viewModel);
+        ButterKnife.bind(this, binding.getRoot());
+
     }
 
     @Override

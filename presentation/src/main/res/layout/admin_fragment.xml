@@ -33,7 +33,8 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:text="@={viewmodel.password}"/>
 
     <Button
         android:id="@+id/adminEnterButton"
@@ -66,7 +67,8 @@
         android:text="@string/warning_wrong_password"
         app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
         app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
-        app:layout_constraintTop_toBottomOf="@+id/adminEnterButton" />
+        app:layout_constraintTop_toBottomOf="@+id/adminEnterButton"
+        android:visibility="@{viewmodel.isRightPassword ? View.INVISIBLE : View.VISIBLE}"/>
 
 </android.support.constraint.ConstraintLayout>
 

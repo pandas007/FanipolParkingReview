@@ -21,5 +21,7 @@
     <string name="info">Информация</string>
     <string name="ok_button">ОК</string>
 
+    <string name="add_car">+ Авто</string>
+
 
 </resources>

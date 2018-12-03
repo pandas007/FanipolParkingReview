@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminCarListViewModel"/>
+    </data>
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        setAdapter="@{viewmodel.carListAdapter}">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/addCarButton"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="#11ff00"
+        android:text="@string/add_car"/>
+
+</android.support.constraint.ConstraintLayout>
+</layout>

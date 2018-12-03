@@ -36,6 +36,7 @@ ext{
             supportDesign: "com.android.support:design:$buildToolsSdkVersion",
             constraintLayout: "com.android.support.constraint:constraint-layout:$constraintLayoutVersion",
             androidBindingCompiler: "com.android.databinding:compiler:$dataBindingVersion",
+            recyclerView: "com.android.support:recyclerview-v7:$buildToolsSdkVersion",
 
             dagger: "com.google.dagger:dagger:$daggerVersion",
             daggerCompiler: "com.google.dagger:dagger-compiler:$daggerVersion",
