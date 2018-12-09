@@ -1,6 +1,7 @@
 package com.example.evgen.fanipolparking.injection;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.evgen.data.BuildConfig;
 import com.example.evgen.data.repository.DriverRepositoryImpl;
@@ -10,10 +11,17 @@ import com.example.evgen.domain.executor.PostExecutionThread;
 import com.example.evgen.domain.repository.DriverRepository;
 import com.example.evgen.fanipolparking.executor.UIThread;
 
+import java.io.IOException;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -42,11 +50,23 @@ public class AppModule {
 
     @Provides
     @Singleton
-    public Retrofit getRetrofit(){
+    public Retrofit getRetrofit(OkHttpClient okHttpClient){
         return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .baseUrl(BuildConfig.BASE_URL)
+                .client(okHttpClient)
+                .build();
+    }
+
+
+    @Provides
+    @Singleton
+    public OkHttpClient getOkHttpClient(){
+        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        return new OkHttpClient.Builder()
+                .addInterceptor(interceptor)
                 .build();
     }
 

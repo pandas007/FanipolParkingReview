@@ -11,5 +11,5 @@ import io.reactivex.Observable;
 public interface DriverRepository {
 
     Observable<List<DriverEntity>> get();
-    Completable save();
+    Completable save(DriverEntity driverEntity);
 }

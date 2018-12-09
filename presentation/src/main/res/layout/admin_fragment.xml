@@ -10,66 +10,66 @@
             type="com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminViewModel"/>
     </data>
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
 
-    <EditText
-        android:id="@+id/adminPasswordEdit"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/password_edit"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        android:text="@={viewmodel.password}"/>
+        <EditText
+            android:id="@+id/adminPasswordEdit"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:hint="@string/password_edit"
+            android:inputType="textPassword"
+            android:text="@={viewmodel.password}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <Button
-        android:id="@+id/adminEnterButton"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/admin_enter_button"
-        app:layout_constraintEnd_toEndOf="@+id/adminPasswordEdit"
-        app:layout_constraintStart_toStartOf="@+id/adminPasswordEdit"
-        app:layout_constraintTop_toBottomOf="@+id/adminPasswordEdit" />
+        <Button
+            android:id="@+id/adminEnterButton"
+            android:layout_width="91dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/admin_enter_button"
+            app:layout_constraintEnd_toEndOf="@+id/adminPasswordEdit"
+            app:layout_constraintStart_toStartOf="@+id/adminPasswordEdit"
+            app:layout_constraintTop_toBottomOf="@+id/adminPasswordEdit" />
 
-    <TextView
-        android:id="@+id/warningNoInternetAdmin"
-        style="@style/WarningTextView"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/warning_no_internet"
-        app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
-        app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
-        app:layout_constraintTop_toBottomOf="@+id/warningWrongPassword"
-        android:visibility="@{viewmodel.isOnline ? View.INVISIBLE : View.VISIBLE}"/>
+        <TextView
+            android:id="@+id/warningNoInternetAdmin"
+            style="@style/WarningTextView"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/warning_no_internet"
+            android:visibility="@{viewmodel.isOnline ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
+            app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
+            app:layout_constraintTop_toBottomOf="@+id/warningWrongPassword" />
 
-    <TextView
-        android:id="@+id/warningWrongPassword"
-        style="@style/WarningTextView"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/warning_wrong_password"
-        app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
-        app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
-        app:layout_constraintTop_toBottomOf="@+id/adminEnterButton"
-        android:visibility="@{viewmodel.isRightPassword ? View.INVISIBLE : View.VISIBLE}"/>
+        <TextView
+            android:id="@+id/warningWrongPassword"
+            style="@style/WarningTextView"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/warning_wrong_password"
+            android:visibility="@{viewmodel.isRightPassword ? View.INVISIBLE : View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="@+id/adminEnterButton"
+            app:layout_constraintStart_toStartOf="@+id/adminEnterButton"
+            app:layout_constraintTop_toBottomOf="@+id/adminEnterButton" />
 
-</android.support.constraint.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </layout>

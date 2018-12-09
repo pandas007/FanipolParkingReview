@@ -25,4 +25,18 @@
         <item name="android:visibility">invisible</item>
     </style>
 
+    <!--Style for LinearLayouts in admin_add_car_screen.xml-->
+    <style name="LinearLayoutItemsStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <!--Style for EditText fields in admin_add_car_screen.xml-->
+    <style name="EditTextAddCarStyle">
+        <item name="android:layout_width">150dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
 </resources>

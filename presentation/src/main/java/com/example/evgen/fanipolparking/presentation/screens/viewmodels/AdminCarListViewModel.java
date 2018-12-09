@@ -3,8 +3,12 @@ package com.example.evgen.fanipolparking.presentation.screens.viewmodels;
 import android.util.Log;
 
 import com.android.databinding.library.baseAdapters.BR;
+import com.example.evgen.data.entity.Driver;
+import com.example.evgen.data.rest.RestApi;
+import com.example.evgen.data.rest.RestService;
 import com.example.evgen.domain.entity.DriverEntity;
 import com.example.evgen.domain.interactors.GetDriversUseCase;
+import com.example.evgen.domain.interactors.SaveNewDriverUseCase;
 import com.example.evgen.fanipolparking.R;
 import com.example.evgen.fanipolparking.adapters.CarListAdapter;
 import com.example.evgen.fanipolparking.app.App;
@@ -15,7 +19,12 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import io.reactivex.CompletableObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
 
 
 public class AdminCarListViewModel extends BaseViewModel {
@@ -25,6 +34,7 @@ public class AdminCarListViewModel extends BaseViewModel {
 
     @Inject
     public GetDriversUseCase getDriversUseCase;
+
     @Override
     public void createInject() {
         App.getAppComponent().inject(this);
@@ -44,7 +54,6 @@ public class AdminCarListViewModel extends BaseViewModel {
             }
         });
     }
-
 
     public DriverEntity getDriverAtPos(Integer index){
         if (carList != null && index != null && carList.size() > index){

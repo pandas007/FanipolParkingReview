@@ -59,4 +59,9 @@ public class DriverEntity {
         this.createdTime = createdTime;
         this.updatedTime = updatedTime;
     }
+
+    public DriverEntity(String number, String car) {
+        this.number = number;
+        this.car = car;
+    }
 }

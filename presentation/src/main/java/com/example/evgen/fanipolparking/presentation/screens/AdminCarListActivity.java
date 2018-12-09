@@ -1,6 +1,7 @@
 package com.example.evgen.fanipolparking.presentation.screens;
 
 import android.arch.lifecycle.ViewModelProviders;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import butterknife.OnClick;
 
 
 public class AdminCarListActivity extends BaseMvvmActivity<AdminCarListScreenBinding, AdminCarListViewModel>{
+
     @Override
     public int provideLayoutId() {
         return R.layout.admin_car_list_screen;

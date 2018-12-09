@@ -7,8 +7,6 @@ import com.example.evgen.fanipolparking.databinding.AdminAddCarScreenBinding;
 import com.example.evgen.fanipolparking.presentation.base.BaseMvvmActivity;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminAddCarViewModel;
 
-
-
 public class AdminAddCarActivity extends BaseMvvmActivity<AdminAddCarScreenBinding, AdminAddCarViewModel> {
     @Override
     public int provideLayoutId() {
@@ -19,4 +17,5 @@ public class AdminAddCarActivity extends BaseMvvmActivity<AdminAddCarScreenBindi
     public AdminAddCarViewModel provideViewModel() {
         return ViewModelProviders.of(this).get(AdminAddCarViewModel.class);
     }
+
 }

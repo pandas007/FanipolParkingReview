@@ -35,6 +35,9 @@ dependencies {
     implementation dependency.dagger
     annotationProcessor dependency.daggerCompiler
 
+    implementation dependency.okHttp
+    implementation dependency.okHttpLogginInterceptor
+
     implementation dependency.retrofitConverterGson
     implementation dependency.retrofitRxAdapter
 

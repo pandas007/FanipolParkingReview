@@ -45,7 +45,10 @@ public class DriverRepositoryImpl implements DriverRepository {
     }
 
     @Override
-    public Completable save() { //FIXME Доделать позже
-        return null;
+    public Completable save(DriverEntity driverEntity) {
+        Driver driver = new Driver();
+        driver.setCar(driverEntity.getCar());
+        driver.setNumber(driverEntity.getNumber());
+        return restService.saveDriverTest(driver);
     }
 }

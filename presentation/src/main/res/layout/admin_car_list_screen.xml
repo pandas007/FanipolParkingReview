@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="#11ff00"
-        android:text="@string/add_car"/>
+        android:text="@string/add_car" />
 
 </android.support.constraint.ConstraintLayout>
 </layout>

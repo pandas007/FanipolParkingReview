@@ -23,5 +23,13 @@
 
     <string name="add_car">+ Авто</string>
 
+    <!--Add car screen-->
+    <string name="driver_phone">Телефон водителя:</string>
+    <string name="pay_day">Оплачено до</string>
+    <string name="car_number_add">1234АВ5</string>
+    <string name="car_model_add">VW Passat B6</string>
+    <string name="driver_phone_add">+375442332214</string>
+    <string name="pay_day_add">25.12.2018</string>
+
 
 </resources>
