@@ -37,7 +37,8 @@ public class DriverRepositoryImpl implements DriverRepository {
 
                         List<DriverEntity> driversList = new ArrayList<>();
                         for (Driver driver: drivers){
-                            driversList.add(new DriverEntity(driver.getNumber(), driver.getCar(), driver.getObjectId()));
+                            driversList.add(new DriverEntity(driver.getNumber(), driver.getCar()
+                                    , driver.getPhone(), driver.getPayDate()));
                         }
                         return driversList;
                     }
@@ -46,9 +47,20 @@ public class DriverRepositoryImpl implements DriverRepository {
 
     @Override
     public Completable save(DriverEntity driverEntity) {
+        return restService.saveDriverTest(createAndFillDriver(driverEntity));
+    }
+
+    /**
+     * Parse DriverEntity to Driver
+     * @param driverEntity
+     * @return new Driver()
+     */
+    private Driver createAndFillDriver(DriverEntity driverEntity){
         Driver driver = new Driver();
-        driver.setCar(driverEntity.getCar());
         driver.setNumber(driverEntity.getNumber());
-        return restService.saveDriverTest(driver);
+        driver.setCar(driverEntity.getCar());
+        driver.setPhone(driverEntity.getPhone());
+        driver.setPayDate(driverEntity.getPayDayTime());
+        return driver;
     }
 }

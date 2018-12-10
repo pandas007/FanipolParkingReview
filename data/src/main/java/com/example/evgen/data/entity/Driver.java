@@ -8,24 +8,30 @@ import java.io.Serializable;
 
 public class Driver implements Serializable {
 
-    @SerializedName("Number")
+    @SerializedName("number")
     @Expose
     private String number;
-    @SerializedName("Car")
+    @SerializedName("phone")
+    @Expose
+    private String phone;
+    @SerializedName("car")
     @Expose
     private String car;
     @SerializedName("created")
     @Expose
-    private Double created;
+    private Long created;
     @SerializedName("ownerId")
     @Expose
-    private Integer ownerId;
+    private String ownerId;
     @SerializedName("updated")
     @Expose
-    private Double updated;
+    private Long updated;
     @SerializedName("objectId")
     @Expose
     private String objectId;
+    @SerializedName("payDate")
+    @Expose
+    private Long payDate;
     @SerializedName("___class")
     @Expose
     private String _class;
@@ -38,6 +44,14 @@ public class Driver implements Serializable {
         this.number = number;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getCar() {
         return car;
     }
@@ -46,27 +60,27 @@ public class Driver implements Serializable {
         this.car = car;
     }
 
-    public Double getCreated() {
+    public Long getCreated() {
         return created;
     }
 
-    public void setCreated(Double created) {
+    public void setCreated(Long created) {
         this.created = created;
     }
 
-    public Integer getOwnerId() {
+    public String getOwnerId() {
         return ownerId;
     }
 
-    public void setOwnerId(Integer ownerId) {
+    public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
-    public Double getUpdated() {
+    public Long getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Double updated) {
+    public void setUpdated(Long updated) {
         this.updated = updated;
     }
 
@@ -76,6 +90,14 @@ public class Driver implements Serializable {
 
     public void setObjectId(String objectId) {
         this.objectId = objectId;
+    }
+
+    public Long getPayDate() {
+        return payDate;
+    }
+
+    public void setPayDate(Long payDate) {
+        this.payDate = payDate;
     }
 
     public String get_class() {

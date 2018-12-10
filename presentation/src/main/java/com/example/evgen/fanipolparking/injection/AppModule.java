@@ -8,6 +8,7 @@ import com.example.evgen.data.repository.DriverRepositoryImpl;
 import com.example.evgen.data.rest.RestApi;
 import com.example.evgen.data.rest.RestService;
 import com.example.evgen.domain.executor.PostExecutionThread;
+import com.example.evgen.domain.interactors.DateParser;
 import com.example.evgen.domain.repository.DriverRepository;
 import com.example.evgen.fanipolparking.executor.UIThread;
 
@@ -80,5 +81,11 @@ public class AppModule {
     @Singleton
     public DriverRepository getDriverRepository(Context context, RestService restService){
         return new DriverRepositoryImpl(context, restService);
+    }
+
+    @Provides
+    @Singleton
+    public DateParser getDateParser(){
+        return new DateParser();
     }
 }

@@ -75,7 +75,8 @@
             android:hint="@string/car_number_add"
             android:maxLength="7"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            android:text="@={viewmodel.editCarNumber}"/>
 
         <EditText
             android:id="@+id/editAddCar"
@@ -83,15 +84,18 @@
             android:layout_marginStart="8dp"
             android:hint="@string/car_model_add"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            android:text="@={viewmodel.editCarModel}"/>
 
         <EditText
             android:id="@+id/editAddPhone"
             style="@style/EditTextAddCarStyle"
             android:layout_marginStart="8dp"
             android:hint="@string/driver_phone_add"
+            android:inputType="phone"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            android:text="@={viewmodel.editPhone}"/>
 
         <EditText
             android:id="@+id/editAddPayDay"
@@ -99,7 +103,8 @@
             android:layout_marginStart="8dp"
             android:hint="@string/pay_day_add"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            android:text="@={viewmodel.editPayDay}"/>
 
         <android.support.constraint.Guideline
             android:id="@+id/guideline6"

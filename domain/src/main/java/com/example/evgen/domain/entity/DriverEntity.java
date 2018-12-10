@@ -3,23 +3,15 @@ package com.example.evgen.domain.entity;
 
 public class DriverEntity {
 
-    private String number, car, objectId;
-    private Double createdTime, updatedTime;
+    private String number, car, objectId, phone;
+    private Long createdTime, payDayTime;
 
-    public Double getCreatedTime() {
+    public Long getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(Double createdTime) {
+    public void setCreatedTime(long createdTime) {
         this.createdTime = createdTime;
-    }
-
-    public Double getUpdatedTime() {
-        return updatedTime;
-    }
-
-    public void setUpdatedTime(Double updatedTime) {
-        this.updatedTime = updatedTime;
     }
 
     public String getNumber() {
@@ -46,22 +38,26 @@ public class DriverEntity {
         this.objectId = objectId;
     }
 
-    public DriverEntity(String number, String car, String objectId) {
-        this.number = number;
-        this.car = car;
-        this.objectId = objectId;
+    public String getPhone() {
+        return phone;
     }
 
-    public DriverEntity(String number, String car, String objectId, Double createdTime, Double updatedTime) {
-        this.number = number;
-        this.car = car;
-        this.objectId = objectId;
-        this.createdTime = createdTime;
-        this.updatedTime = updatedTime;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public DriverEntity(String number, String car) {
+    public Long getPayDayTime() {
+        return payDayTime;
+    }
+
+    public void setPayDayTime(Long payDayTime) {
+        this.payDayTime = payDayTime;
+    }
+
+    public DriverEntity(String number, String car, String phone, Long payDayTime) {
         this.number = number;
         this.car = car;
+        this.phone = phone;
+        this.payDayTime = payDayTime;
     }
 }
