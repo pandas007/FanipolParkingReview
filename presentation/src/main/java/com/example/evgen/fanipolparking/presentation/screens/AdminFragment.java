@@ -23,8 +23,6 @@ public class AdminFragment extends BaseMvvmFragment<AdminFragmentBinding, AdminV
 
     NetworkReceiver networkReceiver;
 
-    private Disposable disposable;
-
     @Override
     public int provideLayoutId() {
         return R.layout.admin_fragment;
@@ -50,9 +48,6 @@ public class AdminFragment extends BaseMvvmFragment<AdminFragmentBinding, AdminV
             getContext().unregisterReceiver(networkReceiver);
             networkReceiver = null;
         }
-        if (disposable != null) {
-            disposable.dispose();
-        }
     }
 
     @OnClick(R.id.adminEnterButton)
@@ -70,17 +65,14 @@ public class AdminFragment extends BaseMvvmFragment<AdminFragmentBinding, AdminV
     /**
      * Subscribe on completable and listen for a click event in the AdminViewModel.
      * Start AdminCarListActivity if pressed.
-     *WORK, BUT HAS MISTAKE !!!!!!!
      * @param completable = CompletableSubject in VM
      */
     private void enterAdminActivity(CompletableSubject completable) {
-        if (disposable == null) {
-            disposable = completable.subscribe(new Action() {
-                @Override
-                public void run() throws Exception {
-                    startActivity(new Intent(getActivity(), AdminCarListActivity.class));
-                }
-            });
-        }
+        completable.subscribe(new Action() {
+            @Override
+            public void run() throws Exception {
+                startActivity(new Intent(getActivity(), AdminCarListActivity.class));
+            }
+        });
     }
 }
