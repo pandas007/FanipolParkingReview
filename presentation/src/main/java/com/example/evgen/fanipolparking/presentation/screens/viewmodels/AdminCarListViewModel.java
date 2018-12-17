@@ -1,14 +1,10 @@
 package com.example.evgen.fanipolparking.presentation.screens.viewmodels;
 
+import android.databinding.ObservableBoolean;
 import android.util.Log;
 
-import com.android.databinding.library.baseAdapters.BR;
-import com.example.evgen.data.entity.Driver;
-import com.example.evgen.data.rest.RestApi;
-import com.example.evgen.data.rest.RestService;
 import com.example.evgen.domain.entity.DriverEntity;
 import com.example.evgen.domain.interactors.GetDriversUseCase;
-import com.example.evgen.domain.interactors.SaveNewDriverUseCase;
 import com.example.evgen.fanipolparking.R;
 import com.example.evgen.fanipolparking.adapters.CarListAdapter;
 import com.example.evgen.fanipolparking.app.App;
@@ -19,18 +15,15 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import io.reactivex.CompletableObserver;
-import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
-import retrofit2.Retrofit;
 
 
 public class AdminCarListViewModel extends BaseViewModel {
 
     public List<DriverEntity> carList = new ArrayList<>();
     public CarListAdapter carListAdapter = new CarListAdapter(R.layout.admin_car_list_item, this);
+    public ObservableBoolean isLoaded = new ObservableBoolean(true);
 
     @Inject
     public GetDriversUseCase getDriversUseCase;
@@ -40,19 +33,38 @@ public class AdminCarListViewModel extends BaseViewModel {
         App.getAppComponent().inject(this);
     }
 
-    public AdminCarListViewModel() {
-        getCars();
-    }
-
     private void getCars(){
-        getDriversUseCase.getDrivers().subscribe(new Consumer<List<DriverEntity>>() {
+        getDriversUseCase.getDrivers().subscribe(new Observer<List<DriverEntity>>() {
             @Override
-            public void accept(List<DriverEntity> driverEntities) throws Exception {
-                Log.e("getCars", String.valueOf(driverEntities.size()));
+            public void onSubscribe(Disposable d) {
+                compositeDisposable.add(d);
+                isLoaded.set(false);
+            }
+
+            @Override
+            public void onNext(List<DriverEntity> driverEntities) {
                 carList.addAll(driverEntities);
-                carListAdapter.notifyDataSetChanged();
+                carListAdapter.setCarList(driverEntities);
+                isLoaded.set(true);
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e(this.toString(), e.getMessage());
+            }
+
+            @Override
+            public void onComplete() {
+
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getCars();
+        carListAdapter.notifyDataSetChanged();
     }
 
     public DriverEntity getDriverAtPos(Integer index){

@@ -13,7 +13,6 @@ import java.text.ParseException;
 
 import javax.inject.Inject;
 
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 
 

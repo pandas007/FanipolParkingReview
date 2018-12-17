@@ -20,16 +20,26 @@
     <string name="car_number_info">Гос.номер:</string>
     <string name="info">Информация</string>
     <string name="ok_button">ОК</string>
+    
+    <!--Remove driver dialog-->
+    <string name="remove_car_title">Удаление авто</string>
+    <string name="remove_confirm">Точно удалить авто ?</string>
+    <string name="remove_yes">Да</string>
+    <string name="remove_no">Нет</string>
 
     <string name="add_car">+ Авто</string>
 
-    <!--Add car screen-->
+    <!--Add/edit car screen-->
     <string name="driver_phone">Телефон водителя:</string>
     <string name="pay_day">Оплачено до</string>
+    <string name="created_day">Авто добавлено</string>
     <string name="car_number_add">1234АВ5</string>
     <string name="car_model_add">VW Passat B6</string>
     <string name="driver_phone_add">+375442332214</string>
     <string name="pay_day_add">25.12.2018</string>
-
+    <string name="pay_day_edit">продлить стоянку</string>
+    <string name="pay_day_count">Кол-во дней</string>
+    <string name="save_changes">Сохранить изменения</string>
+    <string name="delete_car">Удалить авто</string>
 
 </resources>

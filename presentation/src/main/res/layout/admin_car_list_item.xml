@@ -15,7 +15,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="50dp"
+        setOnClick="@{viewmodel.getDriverAtPos(position)}">
 
         <TextView
             android:id="@+id/recyclerItemTextView"

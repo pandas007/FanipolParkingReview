@@ -6,7 +6,6 @@ import com.example.evgen.data.BuildConfig;
 import com.example.evgen.fanipolparking.app.App;
 import com.example.evgen.fanipolparking.presentation.base.BaseViewModel;
 
-import io.reactivex.Observable;
 import io.reactivex.subjects.CompletableSubject;
 
 

@@ -5,30 +5,42 @@
 
     <data>
         <variable
+            name="view"
+            type="android.view.View"/>
+        <variable
             name="viewmodel"
             type="com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminCarListViewModel"/>
     </data>
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        setAdapter="@{viewmodel.carListAdapter}">
+        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{!viewmodel.isLoaded ? view.VISIBLE : view.GONE}"/>
 
-    <Button
-        android:id="@+id/addCarButton"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="#11ff00"
-        android:text="@string/add_car" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            setAdapter="@{viewmodel.carListAdapter}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/addCarButton"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="#11ff00"
+            android:text="@string/add_car"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 </layout>

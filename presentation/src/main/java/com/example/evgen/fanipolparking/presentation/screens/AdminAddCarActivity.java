@@ -12,8 +12,8 @@ import butterknife.OnClick;
 
 public class AdminAddCarActivity extends BaseMvvmActivity<AdminAddCarScreenBinding, AdminAddCarViewModel> {
 
-    private final String FIRST_SAVE_CONFIRM = "Нажмите еще раз для подтверждения";
-    private final String SECOND_SAVE_CONFIRM = "Авто сохранено";
+    private static final String FIRST_SAVE_CONFIRM = "Нажмите еще раз для подтверждения";
+    private static final String SECOND_SAVE_CONFIRM = "Авто сохранено";
 
     @Override
     public int provideLayoutId() {

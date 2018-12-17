@@ -1,9 +1,6 @@
 package com.example.evgen.data.rest;
 
-import android.util.Log;
-
 import com.example.evgen.data.entity.Driver;
-import com.example.evgen.domain.entity.DriverEntity;
 
 import java.util.List;
 
@@ -12,10 +9,6 @@ import javax.inject.Singleton;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 @Singleton
 public class RestService {
@@ -31,7 +24,15 @@ public class RestService {
        return restApi.loadDrivers();
     }
 
-    public Completable saveDriverTest(Driver driver){
-       return restApi.saveDriverTest(driver);
+    public Completable saveDriver(Driver driver){
+       return restApi.saveDriver(driver);
+    }
+
+    public Completable removeDriver(String objectId){
+        return restApi.removeDriver(objectId);
+    }
+
+    public Completable editDriver(String objectId, Driver driver){
+        return restApi.editDriver(objectId, driver);
     }
 }

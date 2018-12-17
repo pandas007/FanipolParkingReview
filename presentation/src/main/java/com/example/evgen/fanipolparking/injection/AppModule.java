@@ -1,7 +1,6 @@
 package com.example.evgen.fanipolparking.injection;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.evgen.data.BuildConfig;
 import com.example.evgen.data.repository.DriverRepositoryImpl;
@@ -12,16 +11,12 @@ import com.example.evgen.domain.interactors.DateParser;
 import com.example.evgen.domain.repository.DriverRepository;
 import com.example.evgen.fanipolparking.executor.UIThread;
 
-import java.io.IOException;
 
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;

@@ -1,7 +1,9 @@
 package com.example.evgen.domain.entity;
 
 
-public class DriverEntity {
+import java.io.Serializable;
+
+public class DriverEntity implements Serializable {
 
     private String number, car, objectId, phone;
     private Long createdTime, payDayTime;
@@ -51,6 +53,15 @@ public class DriverEntity {
     }
 
     public void setPayDayTime(Long payDayTime) {
+        this.payDayTime = payDayTime;
+    }
+
+    public DriverEntity(String number, String car, String phone, String objectId, Long createdTime, Long payDayTime) {
+        this.number = number;
+        this.car = car;
+        this.phone = phone;
+        this.objectId = objectId;
+        this.createdTime = createdTime;
         this.payDayTime = payDayTime;
     }
 

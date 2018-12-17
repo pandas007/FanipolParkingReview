@@ -16,6 +16,7 @@ public class DriverDialog extends DialogFragment {
 
     private String car;
     private String number;
+    private String payDay;
 
     public void setCar(String car) {
         this.car = car;
@@ -23,6 +24,10 @@ public class DriverDialog extends DialogFragment {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public void setPayDay(String payDay) {
+        this.payDay = payDay;
     }
 
     @NonNull
@@ -33,9 +38,11 @@ public class DriverDialog extends DialogFragment {
 
         TextView foundedCar = view.findViewById(R.id.foundedCar);
         TextView foundedCarNumber = view.findViewById(R.id.foundedCarNumber);
+        TextView foundedCarPayDay = view.findViewById(R.id.foundedCarPayDay);
 
         foundedCar.setText(car);
         foundedCarNumber.setText(number);
+        foundedCarPayDay.setText(payDay);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(view)

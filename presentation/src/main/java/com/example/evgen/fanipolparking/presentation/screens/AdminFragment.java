@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.util.Log;
 
 import com.example.evgen.fanipolparking.R;
 import com.example.evgen.fanipolparking.databinding.AdminFragmentBinding;
@@ -14,7 +13,6 @@ import com.example.evgen.fanipolparking.presentation.receivers.NetworkReceiver;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminViewModel;
 
 import butterknife.OnClick;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.subjects.CompletableSubject;
 

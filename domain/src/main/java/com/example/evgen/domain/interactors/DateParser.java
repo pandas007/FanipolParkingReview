@@ -8,7 +8,7 @@ import java.util.Locale;
 //FIXME решить куда лучше запихнуть этот класс
 public class DateParser {
 
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.mm.yyyy", Locale.getDefault());
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
 
     public String dateToText(Date date){
         return dateFormat.format(date);
@@ -19,5 +19,9 @@ public class DateParser {
      */
     public Date textToDate(String string) throws ParseException{
             return dateFormat.parse(string);
+    }
+
+    public long daysToMillis(long days){
+        return days * 86400000;
     }
 }

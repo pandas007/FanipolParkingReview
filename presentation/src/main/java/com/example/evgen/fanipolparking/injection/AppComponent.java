@@ -2,6 +2,7 @@ package com.example.evgen.fanipolparking.injection;
 
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminAddCarViewModel;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminCarListViewModel;
+import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminEditCarViewModel;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminViewModel;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.DriverViewModel;
 
@@ -18,4 +19,5 @@ public interface AppComponent {
     void inject(AdminViewModel adminViewModel);
     void inject(AdminCarListViewModel adminCarListViewModel);
     void inject(AdminAddCarViewModel adminAddCarViewModel);
+    void inject(AdminEditCarViewModel adminEditCarViewModel);
 }

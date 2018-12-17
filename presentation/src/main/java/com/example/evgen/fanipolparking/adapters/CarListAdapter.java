@@ -12,12 +12,13 @@ import com.android.databinding.library.baseAdapters.BR;
 import com.example.evgen.domain.entity.DriverEntity;
 import com.example.evgen.fanipolparking.presentation.screens.viewmodels.AdminCarListViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.Holder>{
 
     private int layoutId;
-    private List<DriverEntity> carList;
+    private List<DriverEntity> carList = new ArrayList<>();
     private AdminCarListViewModel viewModel;
 
     public CarListAdapter(int layoutId, AdminCarListViewModel viewModel) {
@@ -26,7 +27,11 @@ public class CarListAdapter extends RecyclerView.Adapter<CarListAdapter.Holder>{
     }
 
     public void setCarList(List<DriverEntity> carList) {
-        this.carList = carList;
+        if (!this.carList.isEmpty()) {
+            this.carList.clear();
+        }
+        this.carList.addAll(carList);
+        this.notifyDataSetChanged();
     }
 
     @NonNull

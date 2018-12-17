@@ -12,4 +12,6 @@ public interface DriverRepository {
 
     Observable<List<DriverEntity>> get();
     Completable save(DriverEntity driverEntity);
+    Completable remove(String objectId);
+    Completable edit(DriverEntity driverEntity);
 }

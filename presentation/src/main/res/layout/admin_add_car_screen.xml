@@ -102,6 +102,8 @@
             style="@style/EditTextAddCarStyle"
             android:layout_marginStart="8dp"
             android:hint="@string/pay_day_add"
+            android:inputType="date"
+            android:maxLength="10"
             app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
             android:text="@={viewmodel.editPayDay}"/>
