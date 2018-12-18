@@ -35,9 +35,7 @@
 
         <Button
             android:id="@+id/addCarButton"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:background="#11ff00"
+            style="@style/ButtonStyle"
             android:text="@string/add_car"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

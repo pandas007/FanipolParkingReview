@@ -8,9 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.evgen.domain.entity.DriverEntity;
 import com.example.evgen.fanipolparking.R;
+import com.example.evgen.fanipolparking.presentation.listeners.NextFocusTextWatcher;
 import com.example.evgen.fanipolparking.presentation.screens.AdminEditCarActivity;
 
 
@@ -54,5 +56,15 @@ public class BindingAdapters {
         }else {
             button.setText(R.string.ok_button);
         }
+    }
+
+    /**
+     * request focus to the next editText
+     * @param editText - editTextNumber in driver_fragment
+     * @param isFindCar - useless shit. Can use any boolean
+     */
+    @BindingAdapter("editTextWatcher")
+    public static void textWatcher(final EditText editText, boolean isFindCar){
+        new NextFocusTextWatcher(editText);
     }
 }

@@ -31,8 +31,8 @@
 
     <!--Add/edit car screen-->
     <string name="driver_phone">Телефон водителя:</string>
-    <string name="pay_day">Оплачено до</string>
-    <string name="created_day">Авто добавлено</string>
+    <string name="pay_day">Оплачено до:</string>
+    <string name="created_day">Авто добавлено:</string>
     <string name="car_number_add">1234АВ5</string>
     <string name="car_model_add">VW Passat B6</string>
     <string name="driver_phone_add">+375442332214</string>

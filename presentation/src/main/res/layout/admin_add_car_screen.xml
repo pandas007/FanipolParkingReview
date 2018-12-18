@@ -15,8 +15,7 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewStyle"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/car_number_info"
@@ -25,8 +24,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewStyle"
             android:layout_marginStart="8dp"
             android:layout_marginTop="30dp"
             android:text="@string/car_model"
@@ -43,8 +41,7 @@
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewStyle"
             android:layout_marginStart="8dp"
             android:layout_marginTop="30dp"
             android:text="@string/driver_phone"
@@ -53,8 +50,7 @@
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextViewStyle"
             android:layout_marginStart="8dp"
             android:layout_marginTop="30dp"
             android:text="@string/pay_day"
@@ -115,10 +111,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
-        <Button
+        <ImageButton
             android:id="@+id/saveCarButton"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/save_button_selector"
+            android:src="@drawable/ic_check_black_24dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"

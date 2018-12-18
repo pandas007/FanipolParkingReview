@@ -2,6 +2,7 @@ package com.example.evgen.fanipolparking.presentation.screens.viewmodels;
 
 import android.databinding.ObservableBoolean;
 import android.databinding.ObservableField;
+import android.text.Editable;
 
 import com.example.evgen.domain.entity.DriverEntity;
 import com.example.evgen.domain.interactors.DateParser;
@@ -76,4 +77,7 @@ public class DriverViewModel extends BaseViewModel {
                 });
     }
 
+    public void afterTextChanged(Editable e){
+
+    }
 }

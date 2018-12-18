@@ -8,19 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.evgen.fanipolparking.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 public class StartActivity extends AppCompatActivity {
 
+    @BindView(R.id.viewPager) ViewPager viewPager;
+    @BindView(R.id.tabLayout) TabLayout tabLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_screen);
+        ButterKnife.bind(this);
 
-        ViewPager viewPager = findViewById(R.id.viewPager);
         viewPager.setAdapter(new DriverAndAdminPageAdapter(getSupportFragmentManager(), StartActivity.this));
-
-        TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
     }
 }
